@@ -6,7 +6,7 @@ import GalleryPage from "./pages/GalleryPage";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/pawsisters-portfolio">
         <Routes>
           <Route index element={<StartPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
