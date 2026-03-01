@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
   return (
     <header className="bg-white/80 backdrop-blur-sm z-50 shadow-md shadow-pink-200 sticky top-0 ">
       <div className="flex items-center justify-between p-3">
@@ -10,7 +13,7 @@ export default function Header() {
           <a href="/">
             <img
               className="rounded-full w-20"
-              src="public\pawsisterslogo.png"
+              src="/pawsisterslogo.png"
               alt=""
             />
           </a>
@@ -19,39 +22,79 @@ export default function Header() {
 
         <ul className="hidden md:flex gap-4 text-lg font-medium">
           <li>
-            <a
-              className="hover:text-purple-500 transition-all duration-300 ease-in-out"
-              href="#home"
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("home")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="hover:text-purple-500 transition-all duration-300 ease-in-out cursor-pointer"
             >
               Home
-            </a>
+            </button>
           </li>
 
           <li>
-            <a
-              className="hover:text-purple-500 transition-all duration-300 ease-in-out"
-              href="#about"
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="hover:text-purple-500 transition-all duration-300 ease-in-out cursor-pointer"
             >
               About
-            </a>
+            </button>
           </li>
 
           <li>
-            <a
-              className="hover:text-purple-500 transition-all duration-300 ease-in-out"
-              href="#portfolio"
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="hover:text-purple-500 transition-all duration-300 ease-in-out cursor-pointer"
             >
               Portfolio
-            </a>
+            </button>
           </li>
 
           <li>
-            <a
-              className="hover:text-purple-500 transition-all duration-300 ease-in-out"
-              href="#contact"
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              }}
+              className="hover:text-purple-500 transition-all duration-300 ease-in-out cursor-pointer"
             >
               Contact
-            </a>
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => {
+                navigate("/gallery");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="hover:text-purple-500 transition-all duration-300 ease-in-out"
+            >
+              Gallery
+            </button>
           </li>
         </ul>
 
@@ -79,24 +122,77 @@ export default function Header() {
       {isOpen && (
         <ul className="md:hidden py-3 flex flex-col gap-2 text-lg font-medium">
           <li className="w-fit pl-3">
-            <a onClick={() => setIsOpen(false)} href="#home">
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("home")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setIsOpen(false);
+                }, 100);
+              }}
+            >
               Home
-            </a>
+            </button>
           </li>
           <li className="w-fit pl-3">
-            <a onClick={() => setIsOpen(false)} href="#about">
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setIsOpen(false);
+                }, 100);
+              }}
+            >
               About
-            </a>
+            </button>
           </li>
           <li className="w-fit pl-3">
-            <a onClick={() => setIsOpen(false)} href="#portfolio">
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("portfolio")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setIsOpen(false);
+                }, 100);
+              }}
+            >
               Portfolio
-            </a>
+            </button>
           </li>
+
           <li className="w-fit pl-3">
-            <a onClick={() => setIsOpen(false)} href="#contact">
+            <button
+              onClick={() => {
+                navigate("/");
+                setTimeout(() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                  setIsOpen(false);
+                }, 100);
+              }}
+            >
               Contact
-            </a>
+            </button>
+          </li>
+
+          <li>
+            <button
+              onClick={() => {
+                navigate("/gallery");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+              className="w-fit pl-3"
+            >
+              Gallery
+            </button>
           </li>
         </ul>
       )}

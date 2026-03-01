@@ -1,4 +1,4 @@
-import { Mail, Instagram } from "lucide-react";
+import { Mail } from "lucide-react";
 export default function ContactSection() {
   return (
     <section id="contact" className="bg-white py-20 px-4">

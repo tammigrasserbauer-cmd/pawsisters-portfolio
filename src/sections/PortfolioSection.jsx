@@ -1,4 +1,7 @@
+import { Link, useNavigate } from "react-router";
+
 export default function PortfolioSection() {
+  const navigate = useNavigate();
   const portfolioItems = [
     {
       id: 1,
@@ -78,6 +81,20 @@ export default function PortfolioSection() {
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <h2 className="text-center text-lg mt-10">
+          View more pictures{" "}
+          <button
+            onClick={() => {
+              navigate("/gallery");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className=" underline underline-offset-1 text-pink-600 cursor-pointer"
+          >
+            here!
+          </button>
+        </h2>
       </div>
     </section>
   );

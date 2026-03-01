@@ -15,19 +15,27 @@ export default function HomeSection() {
           everyday joy. Artist alley favorites since [YEAR].
         </h2>
 
-        <div className="flex gap-5 justify-center mt-10">
-          <a
-            href="#portfolio"
-            className=" p-3 w-35 rounded-3xl text-center bg-linear-to-r from-pink-300 to-pink-500"
+        <div className="flex gap-5 justify-center items-center mt-10">
+          <button
+            onClick={() => {
+              document
+                .getElementById("portfolio")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className=" p-3.5 w-35 rounded-3xl text-center bg-linear-to-r from-pink-300 to-pink-500"
           >
             View Our Work
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             className="border-pink-500 border-2 p-3 rounded-3xl w-35 text-center"
           >
             Get in Touch
-          </a>
+          </button>
         </div>
       </section>
     </>

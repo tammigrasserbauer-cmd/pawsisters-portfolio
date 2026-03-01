@@ -1,19 +1,17 @@
 import { useState } from "react";
-import Header from "./components/Header";
-import HomeSection from "./sections/HomeSection";
-import AboutSection from "./sections/AboutSection";
-import PortfolioSection from "./sections/PortfolioSection";
-import ContactSection from "./sections/ContactSection";
+import { BrowserRouter, Route, Router, Routes } from "react-router";
+import StartPage from "./pages/StartPage";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
     <>
-      <Header />
-
-      <HomeSection />
-      <AboutSection />
-      <PortfolioSection />
-      <ContactSection />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<StartPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
